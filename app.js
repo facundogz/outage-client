@@ -34,6 +34,7 @@ app.get('/simulate', (req,res)=>{
 });
 
 axios.get(dnsURL).then(res=>console.log(res.data));
-axios.get(serverURL).then(res=>console.log(res.data));
+setTimeout(()=> axios.get(serverURL).then(res=>console.log(res.data))
+    ,20000);
 
 module.exports = app;
